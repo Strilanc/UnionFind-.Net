@@ -19,16 +19,17 @@ public class UnionFindNodeTest {
                 Assert.AreEqual(isSame, isSameRef);
                 Assert.AreEqual(isSame2, isSameRef);
             } else {
-                nodes[i1].Union(nodes[i2]);
-                if (sets[i1] != sets[i2]) {
+                var b1 = nodes[i1].Union(nodes[i2]);
+                var b2 = sets[i1] != sets[i2];
+                Assert.IsTrue(b1 == b2);
+                if (b2) {
                     foreach (var e in sets[i1]) {
                         Assert.IsTrue(sets[i2].Add(e));
                         sets[e] = sets[i2];
                     }
                 }
             }
-        }
-        
+        }   
     }
 
     [TestMethod]
@@ -39,8 +40,8 @@ public class UnionFindNodeTest {
         Assert.IsTrue(r1.IsUnionedWith(r1));
         Assert.IsTrue(r2.IsUnionedWith(r2));
         Assert.IsTrue(!r1.IsUnionedWith(r2));
-        
-        r1.Union(r2);
+
+        Assert.IsTrue(r1.Union(r2));
         Assert.IsTrue(r1.IsUnionedWith(r1));
         Assert.IsTrue(r2.IsUnionedWith(r2));
         Assert.IsTrue(r1.IsUnionedWith(r2));
@@ -54,22 +55,25 @@ public class UnionFindNodeTest {
         Assert.IsTrue(!r1.IsUnionedWith(r3));
         Assert.IsTrue(!r2.IsUnionedWith(r3));
 
-        r1.Union(r3);
+        Assert.IsTrue(r1.Union(r3));
         Assert.IsTrue(!r1.IsUnionedWith(r2));
         Assert.IsTrue(r1.IsUnionedWith(r3));
         Assert.IsTrue(!r2.IsUnionedWith(r3));
 
-        r1.Union(r2);
+        Assert.IsTrue(r1.Union(r2));
         Assert.IsTrue(r1.IsUnionedWith(r2));
         Assert.IsTrue(r1.IsUnionedWith(r3));
         Assert.IsTrue(r2.IsUnionedWith(r3));
+
+        Assert.IsTrue(!r1.Union(r3));
     }
     [TestMethod]
     public void TestChain() {
         var r = new List<UnionFindNode>();
+        r.Add(new UnionFindNode());
         foreach (var repeat in Enumerable.Range(0, 100)) {
             r.Add(new UnionFindNode());
-            r.Last().Union(r.First());
+            Assert.IsTrue(r.Last().Union(r.First()));
             foreach (var e1 in r) {
                 foreach (var e2 in r) {
                     Assert.IsTrue(e1.IsUnionedWith(e2));
