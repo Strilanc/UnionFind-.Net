@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnionFind", "UnionFind\UnionFind.csproj", "{051316F5-B243-4BE6-B5C8-CA7B3571EBD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnionFindTest", "UnionFindTest\UnionFindTest.csproj", "{D99FDFC0-D27A-4D7D-8EE1-A02C06601D5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{051316F5-B243-4BE6-B5C8-CA7B3571EBD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051316F5-B243-4BE6-B5C8-CA7B3571EBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051316F5-B243-4BE6-B5C8-CA7B3571EBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051316F5-B243-4BE6-B5C8-CA7B3571EBD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99FDFC0-D27A-4D7D-8EE1-A02C06601D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99FDFC0-D27A-4D7D-8EE1-A02C06601D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99FDFC0-D27A-4D7D-8EE1-A02C06601D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99FDFC0-D27A-4D7D-8EE1-A02C06601D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
